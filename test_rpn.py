@@ -48,5 +48,17 @@ class TestBasics(unittest.TestCase):
     def test_div_by_zero_2(self):
         result = rpn.calculate("240 0 //")
         self.assertEqual("Error: Cannot divide by Zero, Try again", result)
+    def test_repeat_operator_1(self):
+        result = rpn.calculate("2 5 10 + !")
+        self.assertEqual(17, result)
+    def test_repeat_operator_2(self):
+        result = rpn.calculate("5 2 3 10 * !")
+        self.assertEqual(300, result)
+    def test_repeat_operator_3(self):
+        result = rpn.calculate("20 5 4 / !")
+        self.assertEqual(1, result)
+    def test_repeat_operator_4(self):
+        result = rpn.calculate("10 5 12 -3 - !")
+        self.assertEqual(-4, result)
 
 
