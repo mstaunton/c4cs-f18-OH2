@@ -27,4 +27,16 @@ class TestBasics(unittest.TestCase):
     def test_intdiv_2(self):
         result = rpn.calculate("8 4 //")
         self.assertEqual(2, result)
+    def test_factorial_1(self):
+        result = rpn.calculate("4 !")
+        self.assertEqual(24, result)
+    def test_factorial_2(self):
+        result = rpn.calculate("1 !")
+        self.assertEqual(1, result)
+    def test_factorial_3(self):
+        result = rpn.calculate("2 !")
+        self.assertEqual(2, result)
+    def test_factorial_4(self):
+        result = rpn.calculate("6 !")
+        self.assertEqual(240, result)
 
