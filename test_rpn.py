@@ -60,5 +60,10 @@ class TestBasics(unittest.TestCase):
     def test_repeat_operator_4(self):
         result = rpn.calculate("10 5 12 -3 - !")
         self.assertEqual(-4, result)
+    def test_repeat_operator_5(self):
+        with self.assertRaises(TypeError) as cm:
+             rpn.calculate("4 2 1 -")
+         err = cm.exception
+         self.assertEqual(str(err), 'Too many parameters')
 
 
