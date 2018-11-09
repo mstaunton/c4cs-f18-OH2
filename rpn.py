@@ -32,6 +32,10 @@ def calculate(myarg):
                     stack.append(result)
                 return stack.pop()
             arg2 = stack.pop()
+            if (token == '/' or token == '//'):
+                if(arg2 == 0):
+                    arg1 = stack.pop # pop stack to return it to state before operation called
+                    return "Error: Cannot divide by Zero, Try again"
             arg1 = stack.pop()
             result = function(arg1, arg2)
             stack.append(result)
