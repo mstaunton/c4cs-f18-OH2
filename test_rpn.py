@@ -41,6 +41,6 @@ class TestBasics(unittest.TestCase):
         self.assertEqual(720, result)
     def test_factorial_5(self):
         result = rpn.calculate("-1 !")
-        self.assertEqual("Error: Factorial on positive numbers")
+        self.assertEqual("Error: Factorial only on positive numbers", result)
 
 
