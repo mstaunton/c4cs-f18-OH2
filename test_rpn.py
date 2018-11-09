@@ -21,3 +21,10 @@ class TestBasics(unittest.TestCase):
     def test_exponent_2(self):
         result = rpn.calculate("5 3 ^")
         self.assertEqual(125, result)
+    def test_intdiv_1(self):
+        result = rpn.calculate("7 2 //")
+        self.assertEqual(3, result)
+    def test_intdiv_2(self):
+        result = rpn.calculate("8 4 //")
+        self.assertEqual(2, result)
+
