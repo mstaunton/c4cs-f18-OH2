@@ -42,5 +42,11 @@ class TestBasics(unittest.TestCase):
     def test_factorial_5(self):
         result = rpn.calculate("-1 !")
         self.assertEqual("Error: Factorial only on positive numbers", result)
+    def test_div_by_zero_1(self):
+        result = rpn.calculate("9 0 /")
+        self.assertEqual("Error: Cannot divide by Zero, Try again", result)
+    def test_div_by_zero_2(self):
+        result = rpn.calculate("240 0 //")
+        self.assertEqual("Error: Cannot divide by Zero, Try again", result)
 
 
