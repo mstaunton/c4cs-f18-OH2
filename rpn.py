@@ -10,6 +10,7 @@ operators = {
     '/': operator.truediv,
     '^': operator.pow,
     '//': operator.floordiv,
+    '!': operator.mul,
 }
 
 def calculate(myarg):
@@ -20,6 +21,16 @@ def calculate(myarg):
             stack.append(token)
         except ValueError:
             function = operators[token]
+            if (token == '!'):
+                base = stack.pop()
+                if(base < 1):
+                    return "Error: Factorial only on positive numbers"
+                stack.append(1)
+                for x in range(base, 0, -1):
+                    fact = stack.pop()
+                    result = function(fact, x)
+                    stack.append(result)
+                return stack.pop()
             arg2 = stack.pop()
             arg1 = stack.pop()
             result = function(arg1, arg2)
