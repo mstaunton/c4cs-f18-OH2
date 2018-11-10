@@ -55,15 +55,15 @@ class TestBasics(unittest.TestCase):
         result = rpn.calculate("5 2 3 10 * !")
         self.assertEqual(300, result)
     def test_repeat_operator_3(self):
-        result = rpn.calculate("20 5 4 / !")
-        self.assertEqual(1, result)
+        result = rpn.calculate("4 5 20 / !")
+        self.assertEqual(16, result)
     def test_repeat_operator_4(self):
-        result = rpn.calculate("10 5 12 -3 - !")
-        self.assertEqual(-4, result)
+        result = rpn.calculate("-3 12 5 10 - !")
+        self.assertEqual(-20, result)
     def test_repeat_operator_5(self):
         with self.assertRaises(TypeError) as cm:
              rpn.calculate("4 2 1 -")
-         err = cm.exception
-         self.assertEqual(str(err), 'Too many parameters')
+        err = cm.exception
+        self.assertEqual(str(err), 'Too many parameters')
 
 
